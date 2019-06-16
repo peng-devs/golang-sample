@@ -3,12 +3,8 @@ services:
 - docker
 
 script:
-- docker build -t pengdevs/sample:golang
+- docker build -t pengdevs/sample:golang .
 
-deploy:
-  provider: script
-  script:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
-  - docker push pengdevs/sample:kotlin
-  on:
-    branch: master
+after_success:
+- docker login -u $DOCKER_USER -p $DOCKER_PASS
+- docker push pengdevs/sample:golang
