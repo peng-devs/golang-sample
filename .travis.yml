@@ -1,0 +1,14 @@
+sudo: required
+services:
+- docker
+
+script:
+- docker build -t pengdevs/sample:golang
+
+deploy:
+  provider: script
+  script:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker push pengdevs/sample:kotlin
+  on:
+    branch: master
