@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
       - name: go
-        image: pengdevs/sample:golang
+        image: pengdevs/go-sample
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

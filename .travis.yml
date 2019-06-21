@@ -4,9 +4,9 @@ services:
 - docker
 
 script:
-    - docker build -t pengdevs/go-sample -t pengdevs/go-sample:$TRAVIS_JOB_ID .
+- docker build -t pengdevs/go-sample -t pengdevs/go-sample:$TRAVIS_BUILD_NUMBER .
 
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- docker push pengdevs/go-sample:$TRAVIS_JOB_ID
+- docker push pengdevs/go-sample:$TRAVIS_BUILD_NUMBER
 - docker push pengdevs/go-sample
