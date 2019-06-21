@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
@@ -16,9 +17,12 @@ func health(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	var port = ":" + os.Getenv("APP_PORT")
+	fmt.Println("start server at " + port)
+
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/health", health)
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(port, nil); err != nil {
 		panic(err)
 	}
 }
