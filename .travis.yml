@@ -4,8 +4,9 @@ services:
 - docker
 
 script:
-- docker build -t pengdevs/sample:golang .
+    - docker build -t pengdevs/go-sample -t pengdevs/go-sample:$TRAVIS_JOB_ID .
 
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- docker push pengdevs/sample:golang
+- docker push pengdevs/go-sample:$TRAVIS_JOB_ID
+- docker push pengdevs/go-sample
