@@ -7,12 +7,12 @@ import (
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("[/hello] recieve request")
+	fmt.Println("[/hello] has bean called")
 	w.Write([]byte("Hi, I'm Go server."))
 }
 
 func health(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("[/health] recieve request")
+	fmt.Println("[/health] has been called")
 	w.WriteHeader(http.StatusOK)
 }
 
