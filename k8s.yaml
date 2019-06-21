@@ -42,7 +42,4 @@ spec:
           httpGet:
             path: /health
             port: 8080
-        env:
-        - name: APP_PORT
-          value: "8080"
 
