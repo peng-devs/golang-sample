@@ -32,12 +32,12 @@ metadata:
   labels:
     app: go
 spec:
-  replicas: 3
+  replicas: 5
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 1
-      maxUnavailable: 1
+      maxUnavailable: 2
   selector:
     matchLabels:
       app: go

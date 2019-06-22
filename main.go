@@ -9,7 +9,7 @@ import (
 
 func hello(w http.ResponseWriter, r *http.Request) {
 	log.Println("[/hello] has bean called")
-	w.Write([]byte("Hi, I'm Go server."))
+	w.Write([]byte("Hi, I'm Golang server."))
 }
 
 func greeting(host string) func(http.ResponseWriter, *http.Request) {
